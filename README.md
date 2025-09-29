@@ -4,6 +4,7 @@ EnPOD (Ensemble Proper Orthogonal Decomposition with Galerkin Projection, EnPOD-
   <img src="Image/enPOD.jpg" alt="Workflow of EnPOD" width="600">
 </pr>
 
+If you use any component of PODTherm-GP, please cite:
 ```
 [1] Jiang L, Dowling A, Liu Y, Cheng M-C. Ensemble learning model for effective thermal simulation of multi-core CPUs. Integration. 2024;97:102201.
 ```
