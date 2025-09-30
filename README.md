@@ -9,7 +9,7 @@ If you use any component of PODTherm-GP, please cite:
 [1] Jiang L, Dowling A, Liu Y, Cheng M-C. Ensemble learning model for effective thermal simulation of multi-core CPUs. Integration. 2024;97:102201.
 ```
 # How to install and run EnPOD
-## Dependencies
+## 1. Dependencies
 ### FEniCS platform installation
 PODTherm-GP thermal simulator is developed on the FEniCS platform, which provides a flexible framework for solving partial differential equations (PDEs) using finite element methods. FEniCS should be pre-installed using the following command:  
 ```
@@ -33,3 +33,19 @@ sudo add-apt-repository ppa:fenics-packages/fenics
 sudo apt-get update
 sudo apt-get install --no-install-recommends fenics
 ```
+## 2. Ensemble POD model generation
+### Training data collection
+The training temperature data for an individual POD model of a functional unit (FU) can be obtained through numerical simulations or experimental measurements. The following example (the code can be obtained from [PODTherm-GP](https://github.com/WilbertJiang/PODTherm_GP)) illustrates how to collect temperature data using FEM on the FEniCS platform. Unlike PODTherm-GP, however, power is applied only to the target FU, while all other FUs remain idle.
+```
+    cd ./src  
+    ffc -l dolfin Space.ufl  
+    cd ..  
+    mkdir build  
+    cd ./build  
+    cmake ..  
+    make 
+ ```
+ Then the executable file can be run with one or multiple processes. For instance, the component of training data collection can be performed by 
+ ```
+ mpirun -n 20 ./Therm_FEM
+ ```
