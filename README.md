@@ -73,6 +73,6 @@ The EnPOD approach is demonstrated by performing thermal simulations of a multi-
 
 The least-squares error of EnPOD compared to FEM results:
 
-<p align="center"> <img src="Image/LS.jpg" alt="LS error of EnPOD" width="600"> </p>
+<p align="center"> <img src="Image/LS error.jpg" alt="LS error of EnPOD" width="600"> </p>
 
 These results show that EnPOD is not only resilient to arbitrary dynamic power maps (PMs), but its error can also be accurately pre-estimated through the corresponding eigenvalues.
